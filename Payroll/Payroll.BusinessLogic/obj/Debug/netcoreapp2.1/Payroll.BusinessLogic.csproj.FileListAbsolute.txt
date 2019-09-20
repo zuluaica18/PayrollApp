@@ -1,0 +1,12 @@
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/bin/Debug/netcoreapp2.1/Payroll.BusinessLogic.deps.json
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/bin/Debug/netcoreapp2.1/Payroll.BusinessLogic.dll
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/bin/Debug/netcoreapp2.1/Payroll.BusinessLogic.pdb
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/bin/Debug/netcoreapp2.1/Payroll.Infraestructure.dll
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/bin/Debug/netcoreapp2.1/Payroll.Infraestructure.pdb
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/obj/Debug/netcoreapp2.1/Payroll.BusinessLogic.csprojAssemblyReference.cache
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/obj/Debug/netcoreapp2.1/Payroll.BusinessLogic.csproj.CoreCompileInputs.cache
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/obj/Debug/netcoreapp2.1/Payroll.BusinessLogic.AssemblyInfoInputs.cache
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/obj/Debug/netcoreapp2.1/Payroll.BusinessLogic.AssemblyInfo.cs
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/obj/Debug/netcoreapp2.1/Payroll.BusinessLogic.csproj.CopyComplete
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/obj/Debug/netcoreapp2.1/Payroll.BusinessLogic.dll
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/obj/Debug/netcoreapp2.1/Payroll.BusinessLogic.pdb

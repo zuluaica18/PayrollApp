@@ -1,0 +1,193 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Web/Payroll.Web.csproj": {}
+  },
+  "projects": {
+    "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/Payroll.BusinessLogic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/Payroll.BusinessLogic.csproj",
+        "projectName": "Payroll.BusinessLogic",
+        "projectPath": "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/Payroll.BusinessLogic.csproj",
+        "packagesPath": "/Users/sebastian/.nuget/packages/",
+        "outputPath": "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/sebastian/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Infraestructure/Payroll.Infraestructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Infraestructure/Payroll.Infraestructure.csproj",
+        "projectName": "Payroll.Infraestructure",
+        "projectPath": "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Infraestructure/Payroll.Infraestructure.csproj",
+        "packagesPath": "/Users/sebastian/.nuget/packages/",
+        "outputPath": "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Infraestructure/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/sebastian/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/Payroll.BusinessLogic.csproj": {
+                "projectPath": "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/Payroll.BusinessLogic.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Web/Payroll.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Web/Payroll.Web.csproj",
+        "projectName": "Payroll.Web",
+        "projectPath": "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Web/Payroll.Web.csproj",
+        "packagesPath": "/Users/sebastian/.nuget/packages/",
+        "outputPath": "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Web/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/sebastian/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/Payroll.BusinessLogic.csproj": {
+                "projectPath": "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.BusinessLogic/Payroll.BusinessLogic.csproj"
+              },
+              "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Infraestructure/Payroll.Infraestructure.csproj": {
+                "projectPath": "/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Infraestructure/Payroll.Infraestructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

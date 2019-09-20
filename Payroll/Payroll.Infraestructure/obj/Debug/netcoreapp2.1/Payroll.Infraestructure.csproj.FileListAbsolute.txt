@@ -1,0 +1,10 @@
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Infraestructure/bin/Debug/netcoreapp2.1/Payroll.Infraestructure.deps.json
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Infraestructure/bin/Debug/netcoreapp2.1/Payroll.Infraestructure.runtimeconfig.json
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Infraestructure/bin/Debug/netcoreapp2.1/Payroll.Infraestructure.runtimeconfig.dev.json
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Infraestructure/bin/Debug/netcoreapp2.1/Payroll.Infraestructure.dll
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Infraestructure/bin/Debug/netcoreapp2.1/Payroll.Infraestructure.pdb
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Infraestructure/obj/Debug/netcoreapp2.1/Payroll.Infraestructure.csproj.CoreCompileInputs.cache
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Infraestructure/obj/Debug/netcoreapp2.1/Payroll.Infraestructure.AssemblyInfoInputs.cache
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Infraestructure/obj/Debug/netcoreapp2.1/Payroll.Infraestructure.AssemblyInfo.cs
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Infraestructure/obj/Debug/netcoreapp2.1/Payroll.Infraestructure.dll
+/Users/sebastian/Documents/MasGlobal/PruebaIngreso/Payroll/Payroll.Infraestructure/obj/Debug/netcoreapp2.1/Payroll.Infraestructure.pdb
