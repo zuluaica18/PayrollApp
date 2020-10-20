@@ -11,8 +11,7 @@
 | Framwork | **Spring Boot 2.1.2.RELEASE** `gradle lo instala` |
 
 ### Configuración inicial
-Si es la primera vez que configura el proyecto en eclipse
-<details><summary><b>Ver instrucciones</b></summary>
+<details><summary><b>Si es la primera vez que configura el proyecto en eclipse -> ver instrucciones</b></summary>
 
 1. Descargar el proyecto **[comun]** al mismo nivel de comercial.
 2. En eclipse para gradle 4.6 se debe instalar el plugin:
@@ -37,7 +36,7 @@ Si es la primera vez que configura el proyecto en eclipse
         * Name: `comercial`
         * Project: `comercial-backend`
         * Main class: `com.vegaflor.core.Application`
-        * Arguments -> VM arguments: `-Dspring.profiles.active=local`
+        * Arguments -> <span style="color:red;">VM arguments:</span> `-Dspring.profiles.active=local`
         * Apply -> Run
 </details>
 
