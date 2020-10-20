@@ -10,7 +10,7 @@
 | Administrador de Dependencias | **gradle 4.6** `Ya esta en el proyecto, no es necesario instalar` |
 | Framwork | **Spring Boot 2.1.2.RELEASE** `gradle lo instala` |
 
-## Configuración inicial
+### Configuración inicial
 Si es la primera vez que configura el proyecto en eclipse
 <details><summary><b>Ver instrucciones</b></summary>
 
@@ -21,27 +21,27 @@ Si es la primera vez que configura el proyecto en eclipse
     ```
 3. **Import...** -> **Gradle (STS)** -> **Gradle (STS) Project** `Se usara la version de gradle que esta dentro del proyecto configurada: gradle/wrapper/gradle-wrapper.properties`
 4. Instalar lombok `en caso de que el Ide no lo tenga instalado`
-  <details><summary><b>En eclipse, ver instrucciones</b></summary>
+    <details><summary><b>En eclipse -> ver instrucciones</b></summary>
 
-  1. Ir al proyecto `comercial-backend-comando-aplicacion`
-  2. En `Gradle Dependencies`
-  3. Click derecho en el jar: `lombok-1.16.18.jar`
-  4. **Run As** -> **Java Application**
-  5. En la ventana de instalacion de lombok, seleccionar el eclipse e instalar
-  </details>
+    1. Ir al proyecto `comercial-backend-comando-aplicacion`
+    2. En `Gradle Dependencies`
+    3. Click derecho en el jar: `lombok-1.16.18.jar`
+    4. **Run As** -> **Java Application**
+    5. En la ventana de instalacion de lombok, seleccionar el eclipse e instalar
+    </details>
 
 5. Configurar arranque:
-  1. **En eclipse** -> **Run** -> **Run Configurations**
-  2. Click derecho en **Java Application** -> **New Configuration**
-  3. Diligenciar:
-    * Name: `comercial`
-    * Project: `comercial-backend`
-    * Main class: `com.vegaflor.core.Application`
-    * Arguments -> VM arguments: `-Dspring.profiles.active=local`
-    * Apply -> Run
+    1. **En eclipse** -> **Run** -> **Run Configurations**
+    2. Click derecho en **Java Application** -> **New Configuration**
+    3. Diligenciar:
+        * Name: `comercial`
+        * Project: `comercial-backend`
+        * Main class: `com.vegaflor.core.Application`
+        * Arguments -> VM arguments: `-Dspring.profiles.active=local`
+        * Apply -> Run
 </details>
 
-## Ejecutar
+### Ejecutar
 **Run As...** -> **comercial**
 
 [comun]: https://github.com/grupovegaflor/comun
