@@ -185,15 +185,15 @@
     ```
 </details>
 
-<details><summary>Ejecutar el jar de <b>seguridad</b> en local <b>ver instrucciones</b></summary>
+<details><summary>Ejecutar el jar de <b>seguridad</b> en local <b>(Click aqui)</b></summary>
 
 * Ejecutar jar
 </details>
 
-<details><summary>Ejecutar el jar de <b>produccion</b> en local <b>-> ver instrucciones</b></summary>
+<details><summary>Ejecutar el jar de <b>produccion</b> en local <b>(Click aqui)</b></summary>
 
 * En una **consola** pararse en la ruta del proyecto **produccion**
-* **Compilar** con la version de gradle correcta
+* **Compilar** con la version de **gradle 4.6**
     ```sh
     gradle build -x test
     ```
