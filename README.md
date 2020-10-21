@@ -185,12 +185,12 @@
     ```
 </details>
 
-<details><summary><b>Ejecutar el jar de **seguridad** en local -> ver instrucciones</b></summary>
+<details><summary>Ejecutar el jar de <b>seguridad</b> en local <b>ver instrucciones</b></summary>
 
 * Ejecutar jar
 </details>
 
-<details><summary><b>Ejecutar el jar de **produccion** en local -> ver instrucciones</b></summary>
+<details><summary>Ejecutar el jar de <b>produccion</b> en local <b>-> ver instrucciones</b></summary>
 
 * En una **consola** pararse en la ruta del proyecto **produccion**
 * **Compilar** con la version de gradle correcta
@@ -201,8 +201,7 @@
     ```sh
     java -Dspring.profiles.active=local -jar build/libs/produccion-backend-0.0.1-SNAPSHOT.jar
     ```
-
-
+</details>
 
     pruebas en local
         front
