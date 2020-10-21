@@ -11,7 +11,7 @@
 | Framwork | **Spring Boot 2.1.2.RELEASE** `gradle lo instala` |
 
 ### Configuración inicial
-<details><summary>Si es la primera vez que configura el proyecto en <b>eclipse</b>  <b>(Click aqui)</b></summary>
+<details><summary>Si es la primera vez que <b>configura el proyecto en eclipse</b>  <b>(Click aqui)</b></summary>
 
 1. Descargar el proyecto **[comun]** al mismo nivel de comercial.
 2. En eclipse para gradle 4.6 se debe instalar el plugin:
@@ -56,7 +56,7 @@
 | Framwork | **[Angular CLI 7.3.3]** `npm install -g @angular/cli@7.3.3` |
 
 ### Configuración inicial
-<details><summary><b>Si es la primera vez que configura el proyecto -> ver instrucciones</b></summary>
+<details><summary>Si es la primera vez que <b>configura el proyecto</b>  <b>(Click aqui)</b></summary>
 
 1. Instalar el [token] para importar el comun-frontend
     * En https://github.com/ ir a **Settings** -> **Developer settings** -> **Personal access tokens** -> **Generate new token**
@@ -98,14 +98,14 @@
 [En MAC]: https://www.hostinet.com/formacion/hosting-alojamiento/editar-archivo-hosts-mac-os-x-macos/
 
 ## DB local
-<details><summary><b>Si desea utilizar una BD local con docker -> ver instrucciones</b></summary>
+<details><summary>Si desea utilizar una <b>BD local con docker</b>  <b>(Click aqui)</b></summary>
 
 1. Instalar docker
 2. Correr imagen de [SQL Server]
     ```sh
     docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=1035911044' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
     ```
-    <details><summary><b>Pequeño manual de docker -> ver instrucciones</b></summary>
+    <details><summary><b>Pequeño manual de docker</b>  <b>(Click aqui)</b></summary>
 
     * Instanciar una **imagen** en un nuevo **contenedor**
         ```sh
@@ -179,7 +179,7 @@
     ```sh
     docker ps -a
     ```
-* Reanudar **contenedor** `en caso de que este detenido`
+* Reanudar **contenedor** `en caso de estar detenido`
     ```sh
     docker start <NAME_CONTAINER>
     ```
@@ -187,29 +187,56 @@
 
 <details><summary>Subir el jar de <b>seguridad</b>  <b>(Click aqui)</b></summary>
 
-* Ejecutar jar
+* En una **consola** ubicarse en la ruta del proyecto **seguridad/seguridad**
+* **Compilar** con el **gradlew** `En caso de error de permisos ejecutar "chmod +x gradlew"`
+    ```sh
+    ./gradlew build -x test
+    ```
+* Ejecutar **jar**
+    ```sh
+    java -Dspring.profiles.active=local -jar build/libs/seguridad-0.0.1-SNAPSHOT.jar
+    ```
 </details>
 
 <details><summary>Subir el jar de <b>produccion</b>  <b>(Click aqui)</b></summary>
 
-* En una **consola** ubicarse en la ruta del proyecto **produccion**
+* En una **consola** ubicarse en la ruta del proyecto **produccion/produccion-backend**
 * **Compilar** con la version de **gradle 4.6**
     ```sh
     gradle build -x test
     ```
-* Ejecutar jar
+* Ejecutar **jar**
     ```sh
     java -Dspring.profiles.active=local -jar build/libs/produccion-backend-0.0.1-SNAPSHOT.jar
     ```
 </details>
 
-    pruebas en local
-        front
-        Backend
-    Ejecutar jar en local
+## Ejecutar pruebas
+<details><summary>Pruebas unitarias y funcionales <b>Backend</b>  <b>(Click aqui)</b></summary>
 
-    
+* En una **consola** ubicarse en la ruta del proyecto **comercial/comercial-backend**
+* **Ejecutar test** con la version de **gradle 4.6**
+    ```sh
+    gradle --stacktrace test
+    ```
+</details>
 
-    
-        
-        
+<details><summary>Pruebas unitarias <b>Frontend</b>  <b>(Click aqui)</b></summary>
+
+* En una **consola** ubicarse en la ruta del proyecto **comercial/comercial-frontend**
+* **Ejecutar test**
+    ```sh
+    ng test --watch=false --browsers ChromeHeadless --code-coverage
+    ```
+</details>
+
+## Ejecutar jar
+* En una **consola** ubicarse en la ruta del proyecto **comercial/comercial-backend**
+* **Compilar** con la version de **gradle 4.6**
+    ```sh
+    gradle clean build -x test
+    ```
+* Ejecutar **jar**
+    ```sh
+    java -Dspring.profiles.active=local -jar build/libs/comercial-0.0.1-SNAPSHOT.jar
+    ```
