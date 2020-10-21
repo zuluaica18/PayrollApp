@@ -22,17 +22,17 @@
 4. Instalar lombok `en caso de que el Ide no lo tenga instalado`
     <details><summary><b>En eclipse -> ver instrucciones</b></summary>
 
-    1. Ir al proyecto `comercial-backend-comando-aplicacion`
-    2. En `Gradle Dependencies`
-    3. Click derecho en el jar: `lombok-1.16.18.jar`
-    4. **Run As** -> **Java Application**
-    5. En la ventana de instalacion de lombok, seleccionar el eclipse e instalar
+    * Ir al proyecto `comercial-backend-comando-aplicacion`
+    * En `Gradle Dependencies`
+    * Click derecho en el jar: `lombok-1.16.18.jar`
+    * **Run As** -> **Java Application**
+    * En la ventana de instalacion de lombok, seleccionar el eclipse e instalar
     </details>
 
 5. Configurar arranque:
-    1. **En eclipse** -> **Run** -> **Run Configurations**
-    2. Click derecho en **Java Application** -> **New Configuration**
-    3. Diligenciar:
+    * **En eclipse** -> **Run** -> **Run Configurations**
+    * Click derecho en **Java Application** -> **New Configuration**
+    * Diligenciar:
         ```yaml
         Name: comercial
         Project: comercial-backend
@@ -87,7 +87,7 @@
     ```
 2. Ingresar a la aplicacion
     * https://vegasoft.dev.local:4200/comercial/home
-    * Login
+    * Login:
         ```yaml
         US: pruebas
         PW: 123456
@@ -98,33 +98,55 @@
 [En MAC]: https://www.hostinet.com/formacion/hosting-alojamiento/editar-archivo-hosts-mac-os-x-macos/
 
 ## DB local
-# Instalar docker
-# Correr imagen de SQL Server -- https://hub.docker.com/_/microsoft-mssql-server
-    docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Vegasoft!Passw0rd' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
-# Copiar el BackUp de la BD en el contenedor de Docker
-    # Buscar el nombre del contenedor
+<details><summary><b>Si desea utilizar una BD local -> ver instrucciones</b></summary>
+
+1. Instalar docker
+2. Correr imagen de [SQL Server]
+    ```sh
+    docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=1035911044' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
+    ```
+3. Copiar el **BackUp de la BD** en el contenedor de Docker
+    * Buscar el nombre del contenedor
+        ```sh
         docker ps
-    # Reemplazar <NAME_CONTAINER> por el nombre del contenedor y ejecutar
+        ```
+    * Reemplazar **<NAME_CONTAINER>** por el nombre del contenedor y ejecutar
+        ```sh
         docker exec -it <NAME_CONTAINER> mkdir /var/opt/mssql/backup
-    # Reemplazar <ROUTE_BACKUP> por la ruta del BackUp y ejecutar
-        docker cp <ROUTE_BACKUP>/vegasoftdb_2020_06_26_Test_OK.bak <NAME_CONTAINER>:/var/opt/mssql/backup
-# Instalar cliente
-    # En MAC es recomendado el Azure Data Studio -- https://docs.microsoft.com/en-us/sql/azure-data-studio/quickstart-sql-server?view=sql-server-ver15
-        # Instar cliente Azure Data Studio -- https://www.quackit.com/sql_server/mac/install_azure_data_studio_on_a_mac.cfm
-        # Habilitar el Azure Data Studio para Restaurar BD -- https://techcommunity.microsoft.com/t5/sql-server-engine/sql-operation-studio-enable-preview-features-azure-data-studio/m-p/1090921
-        # Restaurar la BD a partir del BackUp -- https://www.quackit.com/sql_server/mac/how_to_restore_a_bak_file_using_azure_data_studio.cfm
-# Datos BD
-    BD: vegasoftdb
+        ```
+    * Reemplazar **<ROUTE_BACKUP>** por la ruta del **BackUp de la BD** y ejecutar
+        ```sh
+        docker cp <ROUTE_BACKUP>.bak <NAME_CONTAINER>:/var/opt/mssql/backup
+        ```
+4. Instalar cliente
+    * En MAC es recomendado el [Azure Data Studio]
+        * Instar el [cliente Azure Data Studio]
+        * Habilitar el Azure Data Studio para [Restaurar BD]
+        * Restaurar la BD a partir del [BackUp]
+5. Datos BD
+    ```yaml
+    BD: VegaSoftDB
     US: sa
-    PW: Vegasoft!Passw0rd
+    PW: 1035911044
     PT: 1433
-# Modificar en el archivo application-local.yml las propiedades
-    jdbcUrl: jdbc:sqlserver://localhost;databaseName=vegasoftdb
+    ```
+6. Validar en el archivo **application-local.yml** que las propiedades concuerden:
+    ```yaml
+    jdbcUrl: jdbc:sqlserver://localhost;databaseName=VegaSoftDB
     username: sa
-    password: Vegasoft!Passw0rd
-    spring.flyway.url: jdbc:sqlserver://localhost;databaseName=vegasoftdb
+    password: 1035911044
+
+    spring.flyway.url: jdbc:sqlserver://localhost;databaseName=VegaSoftDB
     spring.flyway.user: sa
-    spring.flyway.password: Vegasoft!Passw0rd
+    spring.flyway.password: 1035911044
+    ```
+</details>
+
+[SQL Server]: https://hub.docker.com/_/microsoft-mssql-server
+[Azure Data Studio]: https://docs.microsoft.com/en-us/sql/azure-data-studio/quickstart-sql-server?view=sql-server-ver15
+[cliente Azure Data Studio]: https://www.quackit.com/sql_server/mac/install_azure_data_studio_on_a_mac.cfm
+[Restaurar BD]: https://techcommunity.microsoft.com/t5/sql-server-engine/sql-operation-studio-enable-preview-features-azure-data-studio/m-p/1090921
+[BackUp]: https://www.quackit.com/sql_server/mac/how_to_restore_a_bak_file_using_azure_data_studio.cfm
 
     pruebas en local
         front
