@@ -48,31 +48,55 @@
 [comun]: https://github.com/grupovegaflor/comun
 
 ## Frontend
-Compilador | Viene en el navegador
-Ide | Cualquiera 
-Admin Depend | npm >= 6 "Instalar Node.js"
-Framwork | Angular CLI 7.3.3 "npm install -g @angular/cli@7.3.3" -- https://victorroblesweb.es/2018/11/20/instalar-angular-7-paso-a-paso/
-# Ejectuar
-    # Instalar el token para importar el comun-frontend -- https://stackoverflow.com/questions/23210437/npm-install-private-github-repositories-by-dependency-in-package-json
-        # En https://github.com/ ir a Settings -> Developer settings -> Personal access tokens -> Generate new token
-        # Reemplazar <TOKEN_HERE> por el token y ejecutar
-            git config --global url."https://<TOKEN_HERE>:x-oauth-basic@github.com/".insteadOf https://x-oauth-basic@github.com/
-    # Instalar Dependencias -- npm notice created a lockfile as package-lock.json. You should commit this file.
-        npm install
-    # Agregar al archivo Hosts el dominio local
-        # En MAC -- https://www.hostinet.com/formacion/hosting-alojamiento/editar-archivo-hosts-mac-os-x-macos/
-            127.0.0.1	vegasoft.dev.local
-    # Modificar en el archivo environment.ts las propiedades
-        URLCognito: `https://vegasoftdevelop.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=3uplh7kivsv4965k6apsoo9jk9&redirect_uri=https://vegasoft.dev.local:4200`,
-        URLCognitoLogout: 'https://vegasoftdevelop.auth.us-east-1.amazoncognito.com/logout?client_id=3uplh7kivsv4965k6apsoo9jk9&logout_uri=https://vegasoft.dev.local:4200/',
-    # Ejecutar aplicacion
-        npm start
-    # Ingresar a la aplicacion
-        https://vegasoft.dev.local:4200/comercial/home
-        US: pruebas
-        PW: 123456
-        
-# DB local
+| Herramienta | Version |
+| ------ | ------ |
+| Compilador | **Viene en el navegador** |
+| Ide | **Cualquiera** |
+| Administrador de Dependencias | **npm >= 6** `Instalar Node.js` |
+| Framwork | **Angular CLI 7.3.3** `npm install -g [@angular/cli@7.3.3]` |
+
+### Configuración inicial
+<details><summary><b>Si es la primera vez que configura el proyecto -> ver instrucciones</b></summary>
+
+1. Instalar el [token] para importar el comun-frontend
+    * En https://github.com/ ir a Settings -> Developer settings -> Personal access tokens -> Generate new token
+    * Reemplazar **<TOKEN_HERE>** por el token y ejecutar
+        ```sh
+        git config --global url."https://<TOKEN_HERE>:x-oauth-basic@github.com/".insteadOf https://x-oauth-basic@github.com/
+        ```
+2. Instalar Dependencias. **Pendiente:** `npm notice created a lockfile as package-lock.json. You should commit this file.`
+    ```sh
+    npm install
+    ```
+3. Agregar al archivo Hosts el dominio local
+    ```yaml
+    127.0.0.1	vegasoft.dev.local
+    ```
+    * [En MAC]
+4. Modificar en el archivo **environment.ts** las propiedades
+    ```json
+    URLCognito: `https://vegasoftdevelop.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=3uplh7kivsv4965k6apsoo9jk9&redirect_uri=https://vegasoft.dev.local:4200`,
+    URLCognitoLogout: 'https://vegasoftdevelop.auth.us-east-1.amazoncognito.com/logout?client_id=3uplh7kivsv4965k6apsoo9jk9&logout_uri=https://vegasoft.dev.local:4200/',
+    ```
+</details>
+
+### Ejecutar
+1. Ejecutar aplicacion
+    ```sh
+    npm start
+    ```
+2. Ingresar a la aplicacion
+    ```yaml
+    https://vegasoft.dev.local:4200/comercial/home
+    US: pruebas
+    PW: 123456
+    ```
+
+[@angular/cli@7.3.3]: https://victorroblesweb.es/2018/11/20/instalar-angular-7-paso-a-paso/
+[token]: https://stackoverflow.com/questions/23210437/npm-install-private-github-repositories-by-dependency-in-package-json
+[En MAC]: https://www.hostinet.com/formacion/hosting-alojamiento/editar-archivo-hosts-mac-os-x-macos/
+
+## DB local
 # Instalar docker
 # Correr imagen de SQL Server -- https://hub.docker.com/_/microsoft-mssql-server
     docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Vegasoft!Passw0rd' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
