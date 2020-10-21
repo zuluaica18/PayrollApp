@@ -109,7 +109,7 @@
 
     * Instanciar una **imagen** en un nuevo **contenedor**
         ```sh
-        docker run
+        docker run ...
         ```
     * Detener **contenedor**
         ```sh
@@ -172,6 +172,36 @@
 [Restaurar BD]: https://techcommunity.microsoft.com/t5/sql-server-engine/sql-operation-studio-enable-preview-features-azure-data-studio/m-p/1090921
 [BackUp]: https://www.quackit.com/sql_server/mac/how_to_restore_a_bak_file_using_azure_data_studio.cfm
 
+## Subir ambiente local para desarrollar
+<details><summary><b>Docker BD -> ver instrucciones</b></summary>
+
+* Buscar el **contenedor**
+    ```sh
+    docker ps -a
+    ```
+* Reanudar **contenedor** `en caso de que este detenido`
+    ```sh
+    docker start <NAME_CONTAINER>
+    ```
+</details>
+
+<details><summary><b>Ejecutar el jar de **seguridad** en local -> ver instrucciones</b></summary>
+
+* Ejecutar jar
+</details>
+
+<details><summary><b>Ejecutar el jar de **produccion** en local -> ver instrucciones</b></summary>
+
+* En una **consola** pararse en la ruta del proyecto **produccion**
+* **Compilar** con la version de gradle correcta
+    ```sh
+    gradle build -x test
+    ```
+* Ejecutar jar
+    ```sh
+    java -Dspring.profiles.active=local -jar build/libs/produccion-backend-0.0.1-SNAPSHOT.jar
+    ```
+
 
 
     pruebas en local
@@ -179,11 +209,8 @@
         Backend
     Ejecutar jar en local
 
-    Subir ambiente local
-        Docker BD
-        Ejecutar jar seguridad en local
-        Ejecutar jar produccion en local
+    
 
-    produccion
-        /Users/sebastian/gradle/gradle-6.6/bin/gradle build -x test
-        java -Dspring.profiles.active=local -jar build/libs/produccion-backend-0.0.1-SNAPSHOT.jar
+    
+        
+        
