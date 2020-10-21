@@ -34,10 +34,10 @@
     2. Click derecho en **Java Application** -> **New Configuration**
     3. Diligenciar:
         ```yaml
-        Name: `comercial`
-        Project: `comercial-backend`
-        Main class: `com.vegaflor.core.Application`
-        Arguments -> VM arguments: `-Dspring.profiles.active=local`
+        Name: comercial
+        Project: comercial-backend
+        Main class: com.vegaflor.core.Application
+        Arguments -> VM arguments: -Dspring.profiles.active=local
         Apply -> Run
         ```
 </details>
