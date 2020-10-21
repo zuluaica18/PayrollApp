@@ -33,11 +33,13 @@
     1. **En eclipse** -> **Run** -> **Run Configurations**
     2. Click derecho en **Java Application** -> **New Configuration**
     3. Diligenciar:
-        * Name: `comercial`
-        * Project: `comercial-backend`
-        * Main class: `com.vegaflor.core.Application`
-        * Arguments -> <span style="color:red;">VM arguments:</span> `-Dspring.profiles.active=local`
-        * Apply -> Run
+        ```yaml
+        Name: `comercial`
+        Project: `comercial-backend`
+        Main class: `com.vegaflor.core.Application`
+        Arguments -> VM arguments: `-Dspring.profiles.active=local`
+        Apply -> Run
+        ```
 </details>
 
 ### Ejecutar
