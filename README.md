@@ -53,13 +53,13 @@
 | Compilador | **Viene en el navegador** |
 | Ide | **Cualquiera** |
 | Administrador de Dependencias | **npm >= 6** `Instalar Node.js` |
-| Framwork | **Angular CLI 7.3.3** `npm install -g [@angular/cli@7.3.3]` |
+| Framwork | **[Angular CLI 7.3.3]** `npm install -g @angular/cli@7.3.3` |
 
 ### Configuración inicial
 <details><summary><b>Si es la primera vez que configura el proyecto -> ver instrucciones</b></summary>
 
 1. Instalar el [token] para importar el comun-frontend
-    * En https://github.com/ ir a Settings -> Developer settings -> Personal access tokens -> Generate new token
+    * En https://github.com/ ir a **Settings** -> **Developer settings** -> **Personal access tokens** -> **Generate new token**
     * Reemplazar **<TOKEN_HERE>** por el token y ejecutar
         ```sh
         git config --global url."https://<TOKEN_HERE>:x-oauth-basic@github.com/".insteadOf https://x-oauth-basic@github.com/
@@ -68,7 +68,7 @@
     ```sh
     npm install
     ```
-3. Agregar al archivo Hosts el dominio local
+3. Agregar al archivo **Hosts** el dominio local
     ```yaml
     127.0.0.1	vegasoft.dev.local
     ```
@@ -86,13 +86,14 @@
     npm start
     ```
 2. Ingresar a la aplicacion
-    ```yaml
-    https://vegasoft.dev.local:4200/comercial/home
-    US: pruebas
-    PW: 123456
-    ```
+    * https://vegasoft.dev.local:4200/comercial/home
+    * Login
+        ```yaml
+        US: pruebas
+        PW: 123456
+        ```
 
-[@angular/cli@7.3.3]: https://victorroblesweb.es/2018/11/20/instalar-angular-7-paso-a-paso/
+[Angular CLI 7.3.3]: https://victorroblesweb.es/2018/11/20/instalar-angular-7-paso-a-paso/
 [token]: https://stackoverflow.com/questions/23210437/npm-install-private-github-repositories-by-dependency-in-package-json
 [En MAC]: https://www.hostinet.com/formacion/hosting-alojamiento/editar-archivo-hosts-mac-os-x-macos/
 
