@@ -98,13 +98,37 @@
 [En MAC]: https://www.hostinet.com/formacion/hosting-alojamiento/editar-archivo-hosts-mac-os-x-macos/
 
 ## DB local
-<details><summary><b>Si desea utilizar una BD local -> ver instrucciones</b></summary>
+<details><summary><b>Si desea utilizar una BD local con docker -> ver instrucciones</b></summary>
 
 1. Instalar docker
 2. Correr imagen de [SQL Server]
     ```sh
     docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=1035911044' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
     ```
+    <details><summary><b>Pequeño manual de docker -> ver instrucciones</b></summary>
+
+    * Instanciar una **imagen** en un nuevo **contenedor**
+        ```sh
+        docker run
+        ```
+    * Detener **contenedor**
+        ```sh
+        docker stop <NAME_CONTAINER>
+        ```
+    * Ver todos los **contenedores** detenidos
+        ```sh
+        docker ps -a
+        ```
+    * Reanudar **contenedor**
+        ```sh
+        docker start <NAME_CONTAINER>
+        ```
+    * Borrar **contenedor** `Previamente se debe detener`
+        ```sh
+        docker rm <NAME_CONTAINER>
+        ```
+    </details>
+
 3. Copiar el **BackUp de la BD** en el contenedor de Docker
     * Buscar el nombre del contenedor
         ```sh
@@ -148,6 +172,8 @@
 [Restaurar BD]: https://techcommunity.microsoft.com/t5/sql-server-engine/sql-operation-studio-enable-preview-features-azure-data-studio/m-p/1090921
 [BackUp]: https://www.quackit.com/sql_server/mac/how_to_restore_a_bak_file_using_azure_data_studio.cfm
 
+
+
     pruebas en local
         front
         Backend
@@ -161,9 +187,3 @@
     produccion
         /Users/sebastian/gradle/gradle-6.6/bin/gradle build -x test
         java -Dspring.profiles.active=local -jar build/libs/produccion-backend-0.0.1-SNAPSHOT.jar
-    
-    docker run
-    docker stop
-    docker ps -a
-    docker start
-    docker rm
