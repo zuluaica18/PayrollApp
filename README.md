@@ -173,7 +173,7 @@
 [BackUp]: https://www.quackit.com/sql_server/mac/how_to_restore_a_bak_file_using_azure_data_studio.cfm
 
 ## Subir ambiente local para desarrollar
-<details><summary><b>Docker BD -> ver instrucciones</b></summary>
+<details><summary>Subir el contenedor de <b>SQL Server</b>  <b>(Click aqui)</b></summary>
 
 * Buscar el **contenedor**
     ```sh
@@ -185,15 +185,15 @@
     ```
 </details>
 
-<details><summary>Ejecutar el jar de <b>seguridad</b> en local <b>(Click aqui)</b></summary>
+<details><summary>Subir el jar de <b>seguridad</b>  <b>(Click aqui)</b></summary>
 
 * Ejecutar jar
 </details>
 
-<details><summary>Ejecutar el jar de <b>produccion</b> en local <b>(Click aqui)</b></summary>
+<details><summary>Subir el jar de <b>produccion</b>  <b>(Click aqui)</b></summary>
 
 * En una **consola** ubicarse en la ruta del proyecto **produccion**
-* **Compilar** con la version de **gradle 4.6**s
+* **Compilar** con la version de **gradle 4.6**
     ```sh
     gradle build -x test
     ```
