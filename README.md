@@ -11,7 +11,7 @@
 | Framwork | **Spring Boot 2.1.2.RELEASE** `gradle lo instala` |
 
 ### Configuración inicial
-<details><summary><b>Si es la primera vez que configura el proyecto en eclipse -> ver instrucciones</b></summary>
+<details><summary>Si es la primera vez que configura el proyecto en <b>eclipse</b>  <b>(Click aqui)</b></summary>
 
 1. Descargar el proyecto **[comun]** al mismo nivel de comercial.
 2. En eclipse para gradle 4.6 se debe instalar el plugin:
@@ -20,7 +20,7 @@
     ```
 3. **Import...** -> **Gradle (STS)** -> **Gradle (STS) Project** `Se usara la version de gradle que esta dentro del proyecto configurada: gradle/wrapper/gradle-wrapper.properties`
 4. Instalar lombok `en caso de que el Ide no lo tenga instalado`
-    <details><summary><b>En eclipse -> ver instrucciones</b></summary>
+    <details><summary><b>En eclipse</b>  <b>(Click aqui)</b></summary>
 
     * Ir al proyecto `comercial-backend-comando-aplicacion`
     * En `Gradle Dependencies`
