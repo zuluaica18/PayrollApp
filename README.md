@@ -192,8 +192,8 @@
 
 <details><summary>Ejecutar el jar de <b>produccion</b> en local <b>(Click aqui)</b></summary>
 
-* En una **consola** pararse en la ruta del proyecto **produccion**
-* **Compilar** con la version de **gradle 4.6**
+* En una **consola** ubicarse en la ruta del proyecto **produccion**
+* **Compilar** con la version de **gradle 4.6**s
     ```sh
     gradle build -x test
     ```
