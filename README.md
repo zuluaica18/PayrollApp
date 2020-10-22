@@ -231,6 +231,8 @@
 </details>
 
 ## Ejecutar jar
+<details><summary>Para pruebas manueales <b>sin necesidad de instalar eclipse</b>  <b>(Click aqui)</b></summary>
+
 * En una **consola** ubicarse en la ruta del proyecto **comercial/comercial-backend**
 * **Compilar** con la version de **gradle 4.6**
     ```sh
@@ -240,3 +242,4 @@
     ```sh
     java -Dspring.profiles.active=local -jar build/libs/comercial-0.0.1-SNAPSHOT.jar
     ```
+</details>
