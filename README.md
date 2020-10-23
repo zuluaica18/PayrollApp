@@ -73,10 +73,15 @@
     127.0.0.1	vegasoft.dev.local
     ```
     * [En MAC]
-4. Modificar en el archivo **environment.ts** las propiedades
-    ```json
-    URLCognito: `https://vegasoftdevelop.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=3uplh7kivsv4965k6apsoo9jk9&redirect_uri=https://vegasoft.dev.local:4200`,
-    URLCognitoLogout: 'https://vegasoftdevelop.auth.us-east-1.amazoncognito.com/logout?client_id=3uplh7kivsv4965k6apsoo9jk9&logout_uri=https://vegasoft.dev.local:4200/',
+4. Modificar en el archivo **environment.ts** las propiedades: (**Pendiente** simplificar proceso, ya que el archivo no se puede ignorar)
+    ```diff
+    APLICACION: 2,
+    -  URLCognito: `https://vegasoftdevelop.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=3uplh7kivsv4965k6apsoo9jk9&redirect_uri=https://qa-vegasoft.grupovegaflor.com`,
+    -  URLCognitoLogout: 'https://vegasoftdevelop.auth.us-east-1.amazoncognito.com/logout?client_id=3uplh7kivsv4965k6apsoo9jk9&logout_uri=https://qa-vegasoft.grupovegaflor.com/',
+    +  URLCognito: `https://vegasoftdevelop.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=3uplh7kivsv4965k6apsoo9jk9&redirect_uri=https://vegasoft.dev.local:4200`,
+    +  URLCognitoLogout: 'https://vegasoftdevelop.auth.us-east-1.amazoncognito.com/logout?client_id=3uplh7kivsv4965k6apsoo9jk9&logout_uri=https://vegasoft.dev.local:4200/',
+    URLCognitoProd: `https://vegasoft.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=3rorht6dgibjpg1ucr761mq2rb&redirect_uri=https://vegasoft.grupovegaflor.com`,
+    URLCognitoLogoutProd: 'https://vegasoft.auth.us-east-1.amazoncognito.com/logout?client_id=3rorht6dgibjpg1ucr761mq2rb&logout_uri=https://vegasoft.grupovegaflor.com/'
     ```
 </details>
 
@@ -214,12 +219,20 @@
 ## Ejecutar pruebas
 <details><summary>Pruebas unitarias y funcionales <b>Backend</b>  <b>(Click aqui)</b></summary>
 
-* Cambiar en los 2 archivos **application.yml** las propiedades:
-```yaml
-jdbcUrl: jdbc:sqlserver://localhost;databaseName=VegaSoftDB
-username: sa
-password: 1035911044
-```
+* Cambiar en los **2** archivos **application.yml** las propiedades: (**Pendiente** simplificar proceso, ya que el archivo no se puede ignorar)
+    ```diff
+    datasource:
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        type: com.zaxxer.hikari.HikariDataSource 
+    -      jdbcUrl: jdbc:sqlserver://db.qa;databaseName=VegaSoftDB_Test
+    -      username: ENC(kZSO1rhscG3+iT1QuiG/2FCXr3VnWLx9)
+    -      password: ENC(2Y3MWX2OltEVy5+4gR+V7AaDBROJpEyw)
+    +      jdbcUrl: jdbc:sqlserver://localhost;databaseName=VegaSoftDB
+    +      username: sa
+    +      password: 1035911044
+        hikari:
+            poolName: pool
+    ```
 * En una **consola** ubicarse en la ruta del proyecto **comercial/comercial-backend**
 * **Ejecutar test** con la version de **gradle 4.6**
     ```sh
