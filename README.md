@@ -214,6 +214,12 @@
 ## Ejecutar pruebas
 <details><summary>Pruebas unitarias y funcionales <b>Backend</b>  <b>(Click aqui)</b></summary>
 
+* Cambiar en los 2 archivos **application.yml** las propiedades:
+```yaml
+jdbcUrl: jdbc:sqlserver://localhost;databaseName=VegaSoftDB
+username: sa
+password: 1035911044
+```
 * En una **consola** ubicarse en la ruta del proyecto **comercial/comercial-backend**
 * **Ejecutar test** con la version de **gradle 4.6**
     ```sh
@@ -231,7 +237,7 @@
 </details>
 
 ## Ejecutar jar
-<details><summary>Para pruebas manueales <b>sin necesidad de instalar eclipse</b>  <b>(Click aqui)</b></summary>
+<details><summary>Para pruebas manuales <b>sin necesidad de instalar eclipse</b>  <b>(Click aqui)</b></summary>
 
 * En una **consola** ubicarse en la ruta del proyecto **comercial/comercial-backend**
 * **Compilar** con la version de **gradle 4.6**
