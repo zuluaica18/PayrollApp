@@ -23,7 +23,7 @@ This is a basic Go application created by Fury to be used as a starting point fo
         DB_MYSQL_DESAENV04_PMDEV_PMDEV_ENDPOINT=proxysql.master.meliseginf.com:6612
         ```
         </details>
-    * <details><summary><b>DB Data -> DataGrid Example</b></summary>
+    * <details><summary><b>DB Data</b> -> DataGrid Example</summary>
 
         ```yaml
         New -> Data Source -> MySQL
@@ -86,11 +86,19 @@ This is a basic Go application created by Fury to be used as a starting point fo
                 * Remove from **dump** an instruction to which we don't have [access]
                     ```sh
                     apt-get update
-                    apt-get install vim -y
-                    vim -b /usr/bin/mysqldump
-                        :%s/SET SQL_QUOTE_SHOW_CREATE/#ET SQL_QUOTE_SHOW_CREATE/g
-                        :x!
                     ```
+                    ```sh
+                    apt-get install vim -y
+                    ```
+                    ```sh
+                    vim -b /usr/bin/mysqldump
+                    ```
+                        ```sh
+                        :%s/SET SQL_QUOTE_SHOW_CREATE/#ET SQL_QUOTE_SHOW_CREATE/g
+                        ```
+                        ```sh
+                        :x!
+                        ```
                 * [Copy] pmdev **connected to VPN**
                     * Download **dump** to *container**
                         ```sh
@@ -107,16 +115,16 @@ This is a basic Go application created by Fury to be used as a starting point fo
                 exit
                 
                 ```
-            * Optional -> Copy dump_pmdev.sql to local machine
+            * **Optional** -> Copy dump_pmdev.sql to local machine
                 ```sh
                 docker cp pmlocal:/usr/local/bin/dump_pmdev.sql ./dump_pmdev.sql
                 ```
-        4. install client
+        4. Install client for MySQL
         5. Add to the **Hosts** file the [local domain]:
             ```yaml
             127.0.0.1	proxysql.local.meliseginf.com
             ```
-        6. DB Data -> DataGrid Example
+        6. **DB Data** -> DataGrid Example
             ```yaml
             New -> Data Source -> MySQL
                 Name: pmlocal
@@ -133,7 +141,7 @@ This is a basic Go application created by Fury to be used as a starting point fo
             SELECT VERSION();     >> 8.0.17
             SELECT DATABASE();    >> pmlocal
             ```
-        8. Modify Environment variables
+        8. Modify environment variables
             ```sh
             SCOPE=local-pmlocal;
             DB_MYSQL_DESAENV04_PMDEV_PMDEV_WPROD_USERNAME=🔥YOUR_DB_USER🔥;
