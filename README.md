@@ -7,14 +7,13 @@
 ### Import
 
 <p align="center">
-    <img src="./img/import.png" alt="Size Limit CLI" width="738">
+    <img src="./img/import_collections.png" alt="Size Limit CLI" width="738">
 </p>
-
 
 ### [Variables]
 
-1. **[Environment]**
-    * Diligenciar:
+1. **Environment**
+    * create:
         ```yaml
         Environments -> New -> Environment
         NAME: local
@@ -24,12 +23,18 @@
         CURRENT VALUR: localhost:8080
         ```
     <p align="center">
-        <img src="./img/environment.png" alt="Size Limit CLI" width="738">
+        <img src="./img/var_environment.png" alt="Size Limit CLI" width="738">
     </p>
 2. **For each collection**
     <p align="center">
-        <img src="./img/collection.png" alt="Size Limit CLI" width="738">
+        <img src="./img/var_collection.png" alt="Size Limit CLI" width="738">
     </p>
+
+### Run Tests
+
+<p align="center">
+    <img src="./img/run_tests.png" alt="Size Limit CLI" width="738">
+</p>
 
 
 3. **Import...** -> **Gradle (STS)** -> **Gradle (STS) Project** `Se usara la version de gradle que esta dentro del proyecto configurada: gradle/wrapper/gradle-wrapper.properties`
