@@ -2,9 +2,9 @@
 
 <img src="https://miro.medium.com/max/1200/0*Ij4wyJ4yMq_0Vm_U.png" align="right" alt="Vegaflor" width="148" height="50">
 
-## Uso
+## Guide
 
-### [Import]
+### Import
 
 <p align="center">
     <img src="./img/import.png" alt="Size Limit CLI" width="738">
