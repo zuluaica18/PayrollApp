@@ -94,10 +94,10 @@ This is a basic Go application created by Fury to be used as a starting point fo
                     vim -b /usr/bin/mysqldump
                     ```
                     ```yaml
-                    :%s/SET SQL_QUOTE_SHOW_CREATE/#ET SQL_QUOTE_SHOW_CREATE/g
+                        :%s/SET SQL_QUOTE_SHOW_CREATE/#ET SQL_QUOTE_SHOW_CREATE/g
                     ```
                     ```yaml
-                    :x!
+                        :x!
                     ```
                 * [Copy] pmdev **connected to VPN**
                     * Download **dump** to *container**
