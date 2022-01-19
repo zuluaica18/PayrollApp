@@ -93,12 +93,12 @@ This is a basic Go application created by Fury to be used as a starting point fo
                     ```sh
                     vim -b /usr/bin/mysqldump
                     ```
-                        ```sh
-                        :%s/SET SQL_QUOTE_SHOW_CREATE/#ET SQL_QUOTE_SHOW_CREATE/g
-                        ```
-                        ```sh
-                        :x!
-                        ```
+                    ```yaml
+                    :%s/SET SQL_QUOTE_SHOW_CREATE/#ET SQL_QUOTE_SHOW_CREATE/g
+                    ```
+                    ```yaml
+                    :x!
+                    ```
                 * [Copy] pmdev **connected to VPN**
                     * Download **dump** to *container**
                         ```sh
