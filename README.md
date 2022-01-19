@@ -29,7 +29,7 @@ This is a basic Go application created by Fury to be used as a starting point fo
     cd cmd/app
     go run main.go
     ```
-    * or
+    or
     ```sh
     fury run
     ```
@@ -38,7 +38,7 @@ This is a basic Go application created by Fury to be used as a starting point fo
     ```sh
     go test ./...
     ```
-    * or
+    or
     ```sh
     fury test
     ```
