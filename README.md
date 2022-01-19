@@ -23,7 +23,7 @@ This is a basic Go application created by Fury to be used as a starting point fo
         DB_MYSQL_DESAENV04_PMDEV_PMDEV_ENDPOINT=proxysql.master.meliseginf.com:6612
         ```
         </details>
-    * <details><summary><b>DB Data</b> -> DataGrid Example</summary>
+    * <details><summary><b>DB Connection</b> -> DataGrid Example</summary>
 
         ```yaml
         New -> Data Source -> MySQL
@@ -124,7 +124,7 @@ This is a basic Go application created by Fury to be used as a starting point fo
             ```yaml
             127.0.0.1	proxysql.local.meliseginf.com
             ```
-        6. **DB Data** -> DataGrid Example
+        6. **DB Connection** -> DataGrid Example
             ```yaml
             New -> Data Source -> MySQL
                 Name: pmlocal
