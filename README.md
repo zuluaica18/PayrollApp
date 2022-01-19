@@ -16,12 +16,10 @@ This is a basic Go application created by Fury to be used as a starting point fo
     * The second raises pointing to the development mysql: set the environment variable `SCOPE=local-mysql`.
     <details><summary><b>Example of environment variables</b></summary>
 
-    ```yaml
-    SCOPE=local-mysql;
-    DB_MYSQL_DESAENV04_PMDEV_PMDEV_WPROD=**<YOUR_DB_PASSWORD>**;
-    DB_MYSQL_DESAENV04_PMDEV_PMDEV_WPROD_USERNAME=**<YOUR_DB_USER>**;
-    DB_MYSQL_DESAENV04_PMDEV_PMDEV_ENDPOINT=proxysql.master.meliseginf.com:6612
-    ```
+    `SCOPE=local-mysql;`
+    `DB_MYSQL_DESAENV04_PMDEV_PMDEV_WPROD=**<YOUR_DB_PASSWORD>**;`
+    `DB_MYSQL_DESAENV04_PMDEV_PMDEV_WPROD_USERNAME=**<YOUR_DB_USER>**;`
+    `DB_MYSQL_DESAENV04_PMDEV_PMDEV_ENDPOINT=proxysql.master.meliseginf.com:6612`
     </details>
 
 3. Then you can run it with the command
