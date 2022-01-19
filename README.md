@@ -17,102 +17,135 @@ This is a basic Go application created by Fury to be used as a starting point fo
     * <details><summary><b>Environment variables</b></summary>
 
         ```sh
-        SCOPE=local-mysql;
+        SCOPE=local-pmdev;
         DB_MYSQL_DESAENV04_PMDEV_PMDEV_WPROD_USERNAME=🔥YOUR_DB_USER🔥;
         DB_MYSQL_DESAENV04_PMDEV_PMDEV_WPROD=🔥YOUR_DB_PASSWORD🔥;
         DB_MYSQL_DESAENV04_PMDEV_PMDEV_ENDPOINT=proxysql.master.meliseginf.com:6612
         ```
         </details>
-    * <details><summary>Local DB, Si desea utilizar una <b>BD local con docker</b>  `Opcional`</summary>
+    * <details><summary><b>DB Data -> DataGrid Example</b></summary>
 
-        1. Instalar docker
-        2. Correr imagen de [SQL Server]
-            ```sh
-            docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Vegasoft!Passw0rd' -p 1433:1433 --name sql_server -d mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
-            ```
-            <details><summary><b>Pequeño manual de docker</b>  <b>(Click aqui)</b></summary>
+        ```yaml
+        New -> Data Source -> MySQL
+            Name: pmdev
+            Host: proxysql.master.meliseginf.com
+            Port: 6612
+            User: 🔥YOUR_DB_USER🔥
+            Password: 🔥YOUR_DB_PASSWORD🔥
+            Database: pmdev
+        Apply -> Test Connection -> Ok
+        ```
+        </details>
+    * <details><summary><b>Local DB</b> If you need to use a local database with docker</summary>
 
-            * Instanciar una **imagen** en un nuevo **contenedor**
+        1. Install **Docker**
+        2. Run instance of [MySQL]
+            * Start instance
                 ```sh
-                docker run --name sql_server ...
+                docker run --name pmlocal -e MYSQL_ROOT_PASSWORD=🔥YOUR_DB_PASSWORD🔥 -e MYSQL_DATABASE=pmlocal -e MYSQL_USER=🔥YOUR_DB_USER🔥 -e MYSQL_PASSWORD=🔥YOUR_DB_PASSWORD🔥 -p 6612:3306 -d mysql:8.0.17
                 ```
-            * Detener **contenedor**
-                ```sh
-                docker stop sql_server
-                ```
-            * Consultar el estado del **contenedor**
+            * Validate if the container is running
                 ```sh
                 docker ps -a
                 ```
-            * Reanudar **contenedor**
-                ```sh
-                docker start sql_server
-                ```
-            * Borrar **contenedor** `Previamente se debe detener`
-                ```sh
-                docker rm sql_server
-                ```
-            * Ver log del **contenedor**
-                ```sh
-                docker logs sql_server
-                ```
-            </details>
+            * <details><summary><b>Little Docker Handbook</b> 👈</summary>
 
-        3. Cambiar la **contraseña** del usuario **sa**
-            * Conectarse al sqlcmd del **contenedor**
+                * Instantiate an **image** in a new **container**
+                    ```sh
+                    docker run --name pmlocal ...
+                    ```
+                * Stop **container**
+                    ```sh
+                    docker stop pmlocal
+                    ```
+                * Check the status of the **container**
+                    ```sh
+                    docker ps -a
+                    ```
+                * Resume **container**
+                    ```sh
+                    docker start pmlocal
+                    ```
+                * Delete **container** `Must be stopped first`
+                    ```sh
+                    docker rm pmlocal
+                    ```
+                * See **container** log
+                    ```sh
+                    docker logs pmlocal
+                    ```
+                </details>
+
+        3. Changes inside the **container**
+            * Get in
                 ```sh
-                docker exec -it sql_server /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'Vegasoft!Passw0rd'
+                docker exec -it pmlocal bash
+                
                 ```
-            * Ejecutar los siguientes **comandos** en el mismo orden
+            * Changes
+                * Remove from **dump** an instruction to which we don't have [access]
+                    ```sh
+                    apt-get update
+                    apt-get install vim -y
+                    vim -b /usr/bin/mysqldump
+                        :%s/SET SQL_QUOTE_SHOW_CREATE/#ET SQL_QUOTE_SHOW_CREATE/g
+                        :x!
+                    ```
+                * [Copy] pmdev **connected to VPN**
+                    * Download **dump** to *container**
+                        ```sh
+                        /usr/bin/mysqldump -u 🔥YOUR_DB_USER🔥 -p --host=proxysql.master.meliseginf.com --port=6612 --lock-tables=FALSE --set-gtid-purged=OFF pmdev > /usr/local/bin/dump_pmdev.sql
+                        ```
+                    * `Enter 🔥YOUR_DB_PASSWORD🔥, the process may take several minutes`
+                    * Load **dump_pmdev** into pmlocal
+                        ```sh
+                        /usr/bin/mysql -u 🔥YOUR_DB_USER🔥 -p pmlocal < /usr/local/bin/dump_pmdev.sql
+                        ```
+                    * `Enter 🔥YOUR_DB_PASSWORD🔥`
+            * Get out
                 ```sh
-                ALTER LOGIN sa ENABLE;
-                GO
-                ALTER LOGIN sa WITH PASSWORD = '1035911044', CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF;
-                GO
                 exit
+                
                 ```
-        4. Copiar el **BackUp de la BD** en el contenedor de Docker
-            * Validar quel **contenedor** este corriendo
+            * Optional -> Copy dump_pmdev.sql to local machine
                 ```sh
-                docker ps -a
+                docker cp pmlocal:/usr/local/bin/dump_pmdev.sql ./dump_pmdev.sql
                 ```
-            * Crear directorio en el **contenedor**
-                ```sh
-                docker exec -it sql_server mkdir /var/opt/mssql/backup
-                ```
-            * Reemplazar **<ROUTE_BACKUP>** por la ruta del **BackUp de la BD** y ejecutar
-                ```sh
-                docker cp <ROUTE_BACKUP>.bak sql_server:/var/opt/mssql/backup
-                ```
-        5. Instalar cliente
-            * En MAC es recomendado el [Azure Data Studio]
-                * Instar el [cliente Azure Data Studio]
-                * Habilitar el Azure Data Studio para [Restaurar BD]
-                * Restaurar la BD a partir del [BackUp]
-        6. Datos BD
+        4. install client
+        5. Add to the **Hosts** file the [local domain]:
             ```yaml
-            BD: VegaSoftDB
-            US: sa
-            PW: 1035911044
-            PT: 1433
+            127.0.0.1	proxysql.local.meliseginf.com
             ```
-        7. Validar en el archivo **application-local.yml** que las propiedades concuerden:
+        6. DB Data -> DataGrid Example
             ```yaml
-            jdbcUrl: jdbc:sqlserver://localhost;databaseName=VegaSoftDB
-            username: sa
-            password: 1035911044
-
-            spring.flyway.url: jdbc:sqlserver://localhost;databaseName=VegaSoftDB
-            spring.flyway.user: sa
-            spring.flyway.password: 1035911044
+            New -> Data Source -> MySQL
+                Name: pmlocal
+                Host: proxysql.local.meliseginf.com
+                Port: 6612
+                User: 🔥YOUR_DB_USER🔥
+                Password: 🔥YOUR_DB_PASSWORD🔥
+                Database: pmlocal
+            Apply -> Test Connection -> Ok
+            ```
+        7. Validate **installation**
+            ```yaml
+            New -> Query Console
+            SELECT VERSION();     >> 8.0.17
+            SELECT DATABASE();    >> pmlocal
+            ```
+        8. Modify Environment variables
+            ```sh
+            SCOPE=local-pmlocal;
+            DB_MYSQL_DESAENV04_PMDEV_PMDEV_WPROD_USERNAME=🔥YOUR_DB_USER🔥;
+            DB_MYSQL_DESAENV04_PMDEV_PMDEV_WPROD=🔥YOUR_DB_PASSWORD🔥;
+            DB_MYSQL_DESAENV04_PMDEV_PMDEV_ENDPOINT=proxysql.local.meliseginf.com:6612
             ```
         </details>
 
-[SQL Server]: https://hub.docker.com/_/microsoft-mssql-server
-[Azure Data Studio]: https://docs.microsoft.com/en-us/sql/azure-data-studio/quickstart-sql-server?view=sql-server-ver15
-[cliente Azure Data Studio]: https://www.quackit.com/sql_server/mac/install_azure_data_studio_on_a_mac.cfm
-[Restaurar BD]: https://techcommunity.microsoft.com/t5/sql-server-engine/sql-operation-studio-enable-preview-features-azure-data-studio/m-p/1090921
-[BackUp]: https://www.quackit.com/sql_server/mac/how_to_restore_a_bak_file_using_azure_data_studio.cfm
+[MySQL]: https://hub.docker.com/_/mysql
+[access]: https://www.markotomic.com/mysqldump-mysql-5-6-problem-solved/
+[Copy]: https://www.linuxtotal.com.mx/index.php?cont=info_admon_021
+[local domain]: https://help.nexcess.net/how-to-find-the-hosts-file-on-my-mac
 
 3. Then you can run it with the command
     ```sh
