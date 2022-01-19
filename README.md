@@ -14,12 +14,12 @@ This is a basic Go application created by Fury to be used as a starting point fo
 2. Locally it can be run with 2 profiles:
     * The first one raises a sqlite base in memory. For this they have to set the environment variable `SCOPE=local`.
     * The second raises pointing to the development mysql: set the environment variable `SCOPE=local-mysql`.
-    * <details><summary><b>Example of environment variables</b></summary>
+    * <details><summary><b>Environment variables</b></summary>
 
         ```sh
         SCOPE=local-mysql;
-        DB_MYSQL_DESAENV04_PMDEV_PMDEV_WPROD=<YOUR_DB_PASSWORD>;
-        DB_MYSQL_DESAENV04_PMDEV_PMDEV_WPROD_USERNAME=<YOUR_DB_USER>;
+        DB_MYSQL_DESAENV04_PMDEV_PMDEV_WPROD=🔥YOUR_DB_PASSWORD🔥;
+        DB_MYSQL_DESAENV04_PMDEV_PMDEV_WPROD_USERNAME=🔥YOUR_DB_USER🔥;
         DB_MYSQL_DESAENV04_PMDEV_PMDEV_ENDPOINT=proxysql.master.meliseginf.com:6612
         ```
         </details>
